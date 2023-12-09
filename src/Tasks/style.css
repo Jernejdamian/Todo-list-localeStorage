@@ -1,0 +1,48 @@
+.tasks{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px; 
+}
+.task__button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+    margin: 10px;
+    transition: 1s;
+}
+.task__button--done{
+    background-color: hsl(120, 100%, 25%);
+}
+.task__button--done:hover{
+    background-color: hsl(120, 100%, 30%);
+}
+.task__button--done:active{
+    background-color: hsl(120, 100%, 35%);
+}
+.task__button--remove{
+    background-color: red;
+}
+.task__button--remove:hover{
+    background-color: hsl(0, 100%, 55%);
+}
+.task__button--remove:active{
+    background-color: hsl(0, 100%, 60%);
+}
+.task{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    
+}
+.task__content{
+    text-transform: capitalize;
+}
+.task__content--done{
+    text-decoration:line-through;
+}
+.tasks__item--hidden{
+    display: none;
+}
