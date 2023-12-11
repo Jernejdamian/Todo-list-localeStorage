@@ -4,7 +4,7 @@ import Buttons from './Buttons';
 import Section from './Section';
 import Container from './Container';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -14,14 +14,15 @@ function App() {
     setHideDone(hideDone => !hideDone)
   };
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1, content: "Znaleść serial na wieczór", done: true
-    },
-    {
-      id: 2, content: "Oglądnąć film Informacja Zwrotna", done: false,
-    },
-  ]);
+  const taskFromLocalStorage = localStorage.getItem("tasks");
+
+  const [tasks, setTasks] = useState(
+    taskFromLocalStorage ? JSON.parse(taskFromLocalStorage) : [
+    ]);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  }, [tasks])
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id))
