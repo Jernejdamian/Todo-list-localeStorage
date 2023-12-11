@@ -3,7 +3,6 @@ import Tasks from './Tasks';
 import Buttons from './Buttons';
 import Section from './Section';
 import Container from './Container';
-import './App.css';
 import { useEffect, useState } from 'react';
 
 function App() {
